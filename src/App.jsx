@@ -3,115 +3,30 @@ import React from 'react'
 function App() {
   return (
     <main>
-      <body>
-        <section>
-          <form name="calculator">
-            <input class="answerInput" type="text" name="answer" value="0" />
-            <article>
-              <input
-                class="acButton"
-                type="button"
-                value=" AC "
-                onclick="calculator.answer.value += '1'"
-              />
-              <input
-                class="operatorButton"
-                type="button"
-                value=" ÷ "
-                onclick="calculator.answer.value += '2'"
-              />
-            </article>
-            <article>
-              <input
-                type="button"
-                value=" 7 "
-                onclick="calculator.answer.value += '1'"
-              />
-              <input
-                type="button"
-                value=" 8 "
-                onclick="calculator.answer.value += '2'"
-              />
-              <input
-                type="button"
-                value=" 9 "
-                onclick="calculator.answer.value += '3'"
-              />
-              <input
-                class="operatorButton"
-                type="button"
-                value=" + "
-                onclick="calculator.answer.value += '+'"
-              />
-            </article>
-            <article>
-              <input
-                type="button"
-                value=" 4 "
-                onclick="calculator.answer.value += '4'"
-              />
-              <input
-                type="button"
-                value=" 5 "
-                onclick="calculator.answer.value += '5'"
-              />
-              <input
-                type="button"
-                value=" 6 "
-                onclick="calculator.answer.value += '6'"
-              />
-              <input
-                class="operatorButton"
-                type="button"
-                value=" - "
-                onclick="calculator.answer.value += '-'"
-              />
-            </article>
-            <article>
-              <input
-                type="button"
-                value=" 1 "
-                onclick="calculator.answer.value += '7'"
-              />
-              <input
-                type="button"
-                value=" 2 "
-                onclick="calculator.answer.value += '8'"
-              />
-              <input
-                type="button"
-                value=" 3 "
-                onclick="calculator.answer.value += '9'"
-              />
-              <input
-                class="operatorButton"
-                type="button"
-                value=" + "
-                onclick="calculator.answer.value += '*'"
-              />
-            </article>
-            <article>
-              <input
-                class="longButtons"
-                type="button"
-                value=" 0 "
-                onclick="calculator.answer.value = ''"
-              />
-              <input
-                type="button"
-                value=" . "
-                onclick="calculator.answer.value += '0'"
-              />
-              <input
-                class="operatorButton"
-                type="button"
-                value=" = "
-                onclick="calculator.answer.value = eval(calculator.answer.value)"
-              />
-            </article>
-          </form>
-        </section>
-      </body>
+      <div class="calculator">
+        <div class="display">0</div>
+        <div class="buttons">
+          <button class="button fn">AC</button>
+          <button class="button fn">&#177;</button>
+          <button class="button fn">&#37;</button>
+          <button class="button op">&#247;</button>
+          <button class="button">7</button>
+          <button class="button">8</button>
+          <button class="button">9</button>
+          <button class="button op">&#215;</button>
+          <button class="button">4</button>
+          <button class="button">5</button>
+          <button class="button">6</button>
+          <button class="button op">&#8722;</button>
+          <button class="button">1</button>
+          <button class="button">2</button>
+          <button class="button">3</button>
+          <button class="button op">&#43;</button>
+          <button class="button x2">0</button>
+          <button class="button">.</button>
+          <button class="button op">&#61;</button>
+        </div>
+      </div>
     </main>
   )
 }

@@ -11,46 +11,70 @@ body {
   min-height: 100%;
 }
 
-form {
-  padding-top: 5rem;
+main {
+  height: 100vh;
   display: flex;
+  justify-content: center;
   align-items: center;
+}
+
+.calculator {
+  height: 644px;
+  width: 466px;
+  background-color: #393b2f;
+  box-shadow: 0 22px 70px 4px rgba(0, 0, 0, 0.56);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 2px;
+  display: flex;
   flex-direction: column;
 }
 
-input {
-  font-size: 3rem;
-  width: 4.88rem;
-  border-style: black;
-  color: white;
-  background: rgb(139, 139, 139);
-}
-
-article {
-  display: flex;
-  flex-direction: row;
-  width: 19.5rem;
-}
-
-.answerInput {
-  width: 19.3rem;
+.display {
+  margin-top: 44px;
+  padding: 24px;
+  font-size: 72px;
   text-align: right;
-  font-size: 5rem;
-  background: rgb(49, 49, 49);
-  border: none
+  color: white;
 }
 
-.longButtons {
-  flex-grow: 1;
+.buttons {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2px;
 }
 
-.acButton {
-  flex-grow: 1;
-  text-align: left;
-  background: rgb(78, 77, 77);
-  border: solid .1rem rgb(78, 77, 77);
+.button {
+  display: flex;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #696b62;
+  color: white;
+  font-size: 34px;
 }
 
-.operatorButton {
-  background: orange;
+.button:active {
+  opacity: 60%;
+}
+
+.button.x2 {
+  grid-column: span 2;
+}
+
+.button.fn {
+  background-color: #4c4d42;
+}
+
+.button.op {
+  background-color: #f3a23b;
+}
+
+.button:nth-last-child(3) {
+  border-bottom-left-radius: 8px;
+}
+
+.button:last-child {
+  border-bottom-right-radius: 8px;
 }
