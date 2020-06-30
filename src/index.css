@@ -63,6 +63,10 @@ main {
   grid-column: span 2;
 }
 
+.button.x3 {
+  grid-column: span 3;
+}
+
 .button.fn {
   background-color: #4c4d42;
 }

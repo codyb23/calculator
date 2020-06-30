@@ -8,6 +8,7 @@ function App() {
 
   console.log(chosenNumber)
   console.log(operation)
+  console.log(prevValue)
 
   const setNumberFromButton = (event) => {
     if (chosenNumber === parseFloat(initialValue)) {
@@ -38,6 +39,8 @@ function App() {
   }
 
   const getCalc = (operation) => {
+    console.log(chosenNumber)
+    console.log(prevValue)
     if (chosenNumber === '') {
       setChosenNumber('0')
     }
@@ -74,11 +77,9 @@ function App() {
             : chosenNumber}
         </div>
         <div className="buttons">
-          <button className="button fn" onClick={() => clearAll()}>
+          <button className="button x3 fn" onClick={() => clearAll()}>
             AC
           </button>
-          <button className="button fn">&#177;</button>
-          <button className="button fn">&#37;</button>
           <button className="button op" onClick={() => setOperationType('/')}>
             &#247;
           </button>
