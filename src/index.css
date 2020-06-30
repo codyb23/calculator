@@ -21,6 +21,9 @@ form {
 input {
   font-size: 3rem;
   width: 4.88rem;
+  border-style: black;
+  color: white;
+  background: rgb(139, 139, 139);
 }
 
 article {
@@ -30,9 +33,11 @@ article {
 }
 
 .answerInput {
-  width: 19rem;
+  width: 19.3rem;
   text-align: right;
   font-size: 5rem;
+  background: rgb(49, 49, 49);
+  border: none
 }
 
 .longButtons {
@@ -42,4 +47,10 @@ article {
 .acButton {
   flex-grow: 1;
   text-align: left;
+  background: rgb(78, 77, 77);
+  border: solid .1rem rgb(78, 77, 77);
+}
+
+.operatorButton {
+  background: orange;
 }

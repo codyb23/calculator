@@ -15,6 +15,7 @@ function App() {
                 onclick="calculator.answer.value += '1'"
               />
               <input
+                class="operatorButton"
                 type="button"
                 value=" ÷ "
                 onclick="calculator.answer.value += '2'"
@@ -37,6 +38,7 @@ function App() {
                 onclick="calculator.answer.value += '3'"
               />
               <input
+                class="operatorButton"
                 type="button"
                 value=" + "
                 onclick="calculator.answer.value += '+'"
@@ -59,6 +61,7 @@ function App() {
                 onclick="calculator.answer.value += '6'"
               />
               <input
+                class="operatorButton"
                 type="button"
                 value=" - "
                 onclick="calculator.answer.value += '-'"
@@ -81,6 +84,7 @@ function App() {
                 onclick="calculator.answer.value += '9'"
               />
               <input
+                class="operatorButton"
                 type="button"
                 value=" + "
                 onclick="calculator.answer.value += '*'"
@@ -99,6 +103,7 @@ function App() {
                 onclick="calculator.answer.value += '0'"
               />
               <input
+                class="operatorButton"
                 type="button"
                 value=" = "
                 onclick="calculator.answer.value = eval(calculator.answer.value)"
