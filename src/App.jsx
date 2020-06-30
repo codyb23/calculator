@@ -17,7 +17,19 @@ function App() {
       setChosenNumber(numberFromButton + event)
     }
   }
-  const setOperationType = (type) => setOperation(type)
+
+  const setAfterOperation = () => {
+    setChosenNumber('')
+    setOperation('')
+  }
+
+  const setOperationType = (type) => {
+    if (!prevValue) {
+      setPrevValue(chosenNumber)
+      setChosenNumber('')
+    }
+    setOperation(type)
+  }
 
   const clearAll = () => {
     setChosenNumber(0)
@@ -118,7 +130,14 @@ function App() {
             0
           </button>
           <button className="button">.</button>
-          <button className="button op">&#61;</button>
+          <button
+            className="button op"
+            onClick={(e) => {
+              getCalc(operation)
+            }}
+          >
+            &#61;
+          </button>
         </div>
       </div>
     </main>
