@@ -37,6 +37,32 @@ function App() {
     setPrevValue()
   }
 
+  const getCalc = (operation) => {
+    if (chosenNumber === '') {
+      setChosenNumber('0')
+    }
+    switch (operation) {
+      case '+':
+        setPrevValue(parseInt(prevValue) + parseInt(chosenNumber))
+        setAfterOperation()
+        break
+      case '-':
+        setPrevValue(parseInt(prevValue) - parseInt(chosenNumber))
+        setAfterOperation()
+        break
+      case '*':
+        setPrevValue(parseInt(prevValue) * parseInt(chosenNumber))
+        setAfterOperation()
+        break
+      case '/':
+        setPrevValue(parseInt(prevValue) / parseInt(chosenNumber))
+        setAfterOperation()
+        break
+      default:
+        break
+    }
+  }
+
   return (
     <main>
       <div className="calculator">
