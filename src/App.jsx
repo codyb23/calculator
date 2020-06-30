@@ -66,7 +66,13 @@ function App() {
   return (
     <main>
       <div className="calculator">
-        <div className="display">{chosenNumber}</div>
+        <div className="display">
+          {chosenNumber !== ''
+            ? chosenNumber
+            : '' === operation
+            ? prevValue
+            : chosenNumber}
+        </div>
         <div className="buttons">
           <button className="button fn" onClick={() => clearAll()}>
             AC
