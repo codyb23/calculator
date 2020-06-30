@@ -1,25 +1,27 @@
 import React, { useState } from 'react'
 
 function App() {
-  const [chosenNumber, setChosenNumber] = useState(0)
+  const initialValue = 0
+  const [chosenNumber, setChosenNumber] = useState(parseInt(initialValue))
+  const [prevValue, setPrevValue] = useState()
   const [operation, setOperation] = useState('')
 
-  const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-  const buttons = numbers[chosenNumber]
-
-  console.log(buttons)
+  console.log(chosenNumber)
   console.log(operation)
 
   const setNumberFromButton = (event) => setChosenNumber(event)
   const setOperationType = (type) => setOperation(type)
+
+  const clearAll = () => {
+    setChosenNumber(0)
+    setOperation('')
+    setPrevValue()
+  }
+
   return (
     <main>
       <div className="calculator">
-        <div className="display">
-          {chosenNumber}
-          {operation}
-        </div>
+        <div className="display">{chosenNumber}</div>
         <div className="buttons">
           <button className="button fn">AC</button>
           <button className="button fn">&#177;</button>
@@ -72,7 +74,9 @@ function App() {
           >
             6
           </button>
-          <button className="button op">&#8722;</button>
+          <button className="button op" onClick={() => setOperationType('-')}>
+            &#8722;
+          </button>
           <button
             className="button"
             onClick={(event) => setNumberFromButton(event.target.value)}
@@ -94,7 +98,9 @@ function App() {
           >
             3
           </button>
-          <button className="button op">&#43;</button>
+          <button className="button op" onClick={() => setOperationType('+')}>
+            &#43;
+          </button>
           <button
             className="button x2"
             onClick={(event) => setNumberFromButton(event.target.value)}
