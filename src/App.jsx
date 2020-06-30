@@ -9,7 +9,14 @@ function App() {
   console.log(chosenNumber)
   console.log(operation)
 
-  const setNumberFromButton = (event) => setChosenNumber(event)
+  const setNumberFromButton = (event) => {
+    if (chosenNumber === parseInt(initialValue)) {
+      setChosenNumber(event)
+    } else {
+      const numberFromButton = isNaN(chosenNumber) ? '' : chosenNumber
+      setChosenNumber(numberFromButton + event)
+    }
+  }
   const setOperationType = (type) => setOperation(type)
 
   const clearAll = () => {
@@ -23,7 +30,9 @@ function App() {
       <div className="calculator">
         <div className="display">{chosenNumber}</div>
         <div className="buttons">
-          <button className="button fn">AC</button>
+          <button className="button fn" onClick={() => clearAll()}>
+            AC
+          </button>
           <button className="button fn">&#177;</button>
           <button className="button fn">&#37;</button>
           <button className="button op" onClick={() => setOperationType('/')}>
