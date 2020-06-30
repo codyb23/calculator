@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function App() {
   const initialValue = 0
-  const [chosenNumber, setChosenNumber] = useState(parseInt(initialValue))
+  const [chosenNumber, setChosenNumber] = useState(parseFloat(initialValue))
   const [prevValue, setPrevValue] = useState()
   const [operation, setOperation] = useState('')
 
@@ -10,7 +10,7 @@ function App() {
   console.log(operation)
 
   const setNumberFromButton = (event) => {
-    if (chosenNumber === parseInt(initialValue)) {
+    if (chosenNumber === parseFloat(initialValue)) {
       setChosenNumber(event)
     } else {
       const numberFromButton = isNaN(chosenNumber) ? '' : chosenNumber
@@ -43,19 +43,19 @@ function App() {
     }
     switch (operation) {
       case '+':
-        setPrevValue(parseInt(prevValue) + parseInt(chosenNumber))
+        setPrevValue(parseFloat(prevValue) + parseFloat(chosenNumber))
         setAfterOperation()
         break
       case '-':
-        setPrevValue(parseInt(prevValue) - parseInt(chosenNumber))
+        setPrevValue(parseFloat(prevValue) - parseFloat(chosenNumber))
         setAfterOperation()
         break
       case '*':
-        setPrevValue(parseInt(prevValue) * parseInt(chosenNumber))
+        setPrevValue(parseFloat(prevValue) * parseFloat(chosenNumber))
         setAfterOperation()
         break
       case '/':
-        setPrevValue(parseInt(prevValue) / parseInt(chosenNumber))
+        setPrevValue(parseFloat(prevValue) / parseFloat(chosenNumber))
         setAfterOperation()
         break
       default:
