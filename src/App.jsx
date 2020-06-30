@@ -161,10 +161,16 @@ function App() {
           >
             0
           </button>
-          <button className="button">.</button>
+          <button
+            className="button"
+            onClick={(e) => setNumberFromButton(e.target.value)}
+            value="."
+          >
+            .
+          </button>
           <button
             className="button op"
-            onClick={(e) => {
+            onClick={(event) => {
               getCalc(operation)
             }}
           >
