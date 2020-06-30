@@ -16,14 +16,30 @@ form {
   display: flex;
   align-items: center;
   flex-direction: column;
-  align-content: center;
 }
 
 input {
-  width: 5rem;
-  height: 5rem;
+  font-size: 3rem;
+  width: 4.88rem;
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+  width: 19.5rem;
 }
 
 .answerInput {
-  width: 19.5rem;
+  width: 19rem;
+  text-align: right;
+  font-size: 5rem;
+}
+
+.longButtons {
+  flex-grow: 1;
+}
+
+.acButton {
+  flex-grow: 1;
+  text-align: left;
 }
