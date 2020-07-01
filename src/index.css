@@ -97,7 +97,11 @@ main {
 
 @media (max-width: 500px) {
   .calculator {
-    width: 20rem;
-    height: 30rem;
+    width: 25rem;
+    height: 25rem;
+  }
+
+  .display {
+    margin-top: 0.1rem;
   }
 }
