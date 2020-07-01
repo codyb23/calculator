@@ -53,10 +53,16 @@ main {
   background-color: #696b62;
   color: white;
   font-size: 34px;
+  transition: 0.5s;
 }
 
 .button:active {
   opacity: 60%;
+}
+
+.button:hover {
+  background-color: #0c0e05;
+  color: #f3a23b;
 }
 
 .button.x2 {
@@ -73,6 +79,10 @@ main {
 
 .button.op {
   background-color: #f3a23b;
+}
+
+.button.op:hover {
+  background-color: black;
 }
 
 .button:nth-last-child(3) {
