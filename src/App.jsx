@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 function App() {
   const initialValue = 0
   const [chosenNumber, setChosenNumber] = useState(parseFloat(initialValue))
-  const [prevValue, setPrevValue] = useState()
+  const [prevValue, setPrevValue] = useState(parseFloat(initialValue))
   const [operation, setOperation] = useState('')
 
   console.log(chosenNumber)
@@ -35,12 +35,13 @@ function App() {
   const clearAll = () => {
     setChosenNumber(0)
     setOperation('')
-    setPrevValue()
+    setPrevValue(0)
   }
 
   const getCalc = (operation) => {
     console.log(chosenNumber)
     console.log(prevValue)
+
     if (chosenNumber === '') {
       setChosenNumber('0')
     }

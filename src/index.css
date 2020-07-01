@@ -94,3 +94,10 @@ main {
 .button:last-child {
   border-bottom-right-radius: 8px;
 }
+
+@media (max-width: 500px) {
+  .calculator {
+    width: 20rem;
+    height: 30rem;
+  }
+}
