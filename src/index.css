@@ -16,6 +16,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: linear-gradient(#f3a23b, white, #f3a23b, white, #f3a23b);
 }
 
 .calculator {
