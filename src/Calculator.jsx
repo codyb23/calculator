@@ -2,64 +2,64 @@ import React, { useState } from 'react'
 
 export function Calculator() {
   const initialValue = 0
-  const [chosenNumber, setChosenNumber] = useState(parseFloat(initialValue))
-  const [prevValue, setPrevValue] = useState(parseFloat(initialValue))
-  const [operation, setOperation] = useState('')
+  const [chosenOperand, setChosenOperand] = useState(parseFloat(initialValue))
+  const [prevOperand, setPrevOperand] = useState(parseFloat(initialValue))
+  const [operator, setOperator] = useState('')
 
-  console.log(chosenNumber)
-  console.log(operation)
-  console.log(prevValue)
+  console.log(chosenOperand)
+  console.log(operator)
+  console.log(prevOperand)
 
   const setNumberFromButton = (event) => {
-    if (chosenNumber === parseFloat(initialValue)) {
-      setChosenNumber(event)
+    if (chosenOperand === parseFloat(initialValue)) {
+      setChosenOperand(event)
     } else {
-      const numberFromButton = isNaN(chosenNumber) ? '' : chosenNumber
-      setChosenNumber(numberFromButton + event)
+      const numberFromButton = isNaN(chosenOperand) ? '' : chosenOperand
+      setChosenOperand(numberFromButton + event)
     }
   }
 
   const setAfterOperation = () => {
-    setChosenNumber('')
-    setOperation('')
+    setChosenOperand('')
+    setOperator('')
   }
 
   const setOperationType = (type) => {
-    if (!prevValue) {
-      setPrevValue(chosenNumber)
-      setChosenNumber('')
+    if (!prevOperand) {
+      setPrevOperand(chosenOperand)
+      setChosenOperand('')
     }
-    setOperation(type)
+    setOperator(type)
   }
 
   const clearAll = () => {
-    setChosenNumber(0)
-    setOperation('')
-    setPrevValue(0)
+    setChosenOperand(0)
+    setOperator('')
+    setPrevOperand(0)
   }
 
   const getCalc = (operation) => {
-    console.log(chosenNumber)
-    console.log(prevValue)
+    console.log(chosenOperand)
+    console.log(prevOperand)
 
-    if (chosenNumber === '') {
-      setChosenNumber('0')
+    if (chosenOperand === '') {
+      setChosenOperand('0')
     }
     switch (operation) {
       case '+':
-        setPrevValue(parseFloat(prevValue) + parseFloat(chosenNumber))
+        setPrevOperand(parseFloat(prevOperand) + parseFloat(chosenOperand))
         setAfterOperation()
         break
       case '-':
-        setPrevValue(parseFloat(prevValue) - parseFloat(chosenNumber))
+        setPrevOperand(parseFloat(prevOperand) - parseFloat(chosenOperand))
         setAfterOperation()
         break
       case '*':
-        setPrevValue(parseFloat(prevValue) * parseFloat(chosenNumber))
+        setPrevOperand(parseFloat(prevOperand) * parseFloat(chosenOperand))
         setAfterOperation()
         break
       case '/':
-        setPrevValue(parseFloat(prevValue) / parseFloat(chosenNumber))
+        setPrevOperand(parseFloat(prevOperand) / parseFloat(chosenOperand))
         setAfterOperation()
         break
       default:
@@ -69,11 +69,11 @@ export function Calculator() {
   return (
     <div className="calculator">
       <div className="display">
-        {chosenNumber !== ''
-          ? chosenNumber
-          : '' === operation
-          ? prevValue
-          : chosenNumber}
+        {chosenOperand !== ''
+          ? chosenOperand
+          : '' === operator
+          ? prevOperand
+          : chosenOperand}
       </div>
       <div className="buttons">
         <button className="button x3 fn" onClick={() => clearAll()}>
@@ -171,7 +171,7 @@ export function Calculator() {
         <button
           className="button op"
           onClick={(event) => {
-            getCalc(operation)
+            getCalc(operator)
           }}
         >
           &#61;
