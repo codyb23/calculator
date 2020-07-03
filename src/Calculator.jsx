@@ -2,64 +2,71 @@ import React, { useState } from 'react'
 
 export function Calculator() {
   const initialValue = 0
-  const [display, setDisplay] = useState(0)
-  const [chosenOperand, setChosenOperand] = useState(parseFloat(initialValue))
-  const [prevOperand, setPrevOperand] = useState(parseFloat(initialValue))
+  const [display, setDisplay] = useState(initialValue)
+  const [leftOperand, setLeftOperand] = useState(parseFloat(initialValue))
+  const [rightOperand, setRightOperand] = useState(parseFloat(initialValue))
   const [operator, setOperator] = useState('')
 
-  console.log(chosenOperand)
+  console.log(leftOperand)
   console.log(operator)
-  console.log(prevOperand)
+  console.log(rightOperand)
 
   const setNumberFromButton = (event) => {
-    if (chosenOperand === parseFloat(initialValue)) {
-      setChosenOperand(event)
+    if (leftOperand === parseFloat(initialValue)) {
+      setLeftOperand(event)
+      setDisplay(event)
     } else {
-      setChosenOperand(chosenOperand + event)
+      setLeftOperand(leftOperand + event)
+      setDisplay(leftOperand + event)
     }
   }
 
   const setAfterOperation = () => {
-    setChosenOperand('')
+    setLeftOperand('')
     setOperator('')
+    setRightOperand('')
   }
 
   const setOperationType = (type) => {
-    if (!prevOperand) {
-      setPrevOperand(chosenOperand)
-      setChosenOperand('')
+    if (!rightOperand) {
+      setRightOperand(leftOperand)
+      setLeftOperand('')
     }
     setOperator(type)
   }
 
   const clearAll = () => {
-    setChosenOperand(0)
+    setLeftOperand(0)
     setOperator('')
-    setPrevOperand(0)
+    setRightOperand(0)
+    setDisplay(0)
   }
 
   const getCalc = (operation) => {
-    console.log(chosenOperand)
-    console.log(prevOperand)
+    console.log(leftOperand)
+    console.log(rightOperand)
 
-    if (chosenOperand === '') {
-      setChosenOperand('0')
+    if (leftOperand === '') {
+      setLeftOperand('0')
+    }
+    if (rightOperand === undefined) {
+      setRightOperand('0')
     }
     switch (operation) {
       case '+':
-        setPrevOperand(parseFloat(prevOperand) + parseFloat(chosenOperand))
+        setDisplay(parseFloat(rightOperand) + parseFloat(leftOperand))
         setAfterOperation()
         break
       case '-':
-        setPrevOperand(parseFloat(prevOperand) - parseFloat(chosenOperand))
+        setDisplay(parseFloat(rightOperand) - parseFloat(leftOperand))
         setAfterOperation()
         break
       case '*':
-        setPrevOperand(parseFloat(prevOperand) * parseFloat(chosenOperand))
+        setDisplay(parseFloat(rightOperand) * parseFloat(leftOperand))
         setAfterOperation()
         break
       case '/':
-        setPrevOperand(parseFloat(prevOperand) / parseFloat(chosenOperand))
+        setDisplay(parseFloat(rightOperand) / parseFloat(leftOperand))
         setAfterOperation()
         break
       default:
