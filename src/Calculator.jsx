@@ -30,6 +30,7 @@ export function Calculator() {
       setRightOperand(leftOperand)
       setLeftOperand('')
     }
+
     setOperator(type)
   }
 
@@ -65,6 +66,7 @@ export function Calculator() {
         break
     }
     setDisplay(answer)
+    setLeftOperand()
     setRightOperand()
   }
   return (
