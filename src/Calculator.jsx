@@ -44,32 +44,34 @@ export function Calculator() {
     console.log(leftOperand)
     console.log(rightOperand)
 
-    if (leftOperand === '') {
+    if (leftOperand === undefined) {
       setLeftOperand('0')
     }
-    if (rightOperand === '') {
+    if (rightOperand === undefined) {
       setRightOperand('0')
     }
+
+    let answer
+
     switch (operation) {
       case '+':
-        setDisplay(parseFloat(rightOperand) + parseFloat(leftOperand))
+        answer = parseFloat(rightOperand) + parseFloat(leftOperand)
         setAfterOperation()
         break
       case '-':
-        setDisplay(parseFloat(rightOperand) - parseFloat(leftOperand))
+        answer = parseFloat(rightOperand) - parseFloat(leftOperand)
         setAfterOperation()
         break
       case '*':
-        setDisplay(parseFloat(rightOperand) * parseFloat(leftOperand))
+        answer = parseFloat(rightOperand) * parseFloat(leftOperand)
         setAfterOperation()
         break
       case '/':
-        setDisplay(parseFloat(rightOperand) / parseFloat(leftOperand))
+        answer = parseFloat(rightOperand) / parseFloat(leftOperand)
         setAfterOperation()
         break
-      default:
-        break
     }
+    setDisplay(answer)
   }
   return (
     <div className="calculator">
