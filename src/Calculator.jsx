@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 export function Calculator() {
   const initialValue = 0
+  const [display, setDisplay] = useState(0)
   const [chosenOperand, setChosenOperand] = useState(parseFloat(initialValue))
   const [prevOperand, setPrevOperand] = useState(parseFloat(initialValue))
   const [operator, setOperator] = useState('')
@@ -14,8 +15,7 @@ export function Calculator() {
     if (chosenOperand === parseFloat(initialValue)) {
       setChosenOperand(event)
     } else {
-      const numberFromButton = isNaN(chosenOperand) ? '' : chosenOperand
-      setChosenOperand(numberFromButton + event)
+      setChosenOperand(chosenOperand + event)
     }
   }
 
@@ -68,13 +68,7 @@ export function Calculator() {
   }
   return (
     <div className="calculator">
-      <div className="display">
-        {chosenOperand !== ''
-          ? chosenOperand
-          : '' === operator
-          ? prevOperand
-          : chosenOperand}
-      </div>
+      <div className="display">{display}</div>
       <div className="buttons">
         <button className="button x3 fn" onClick={() => clearAll()}>
           AC
