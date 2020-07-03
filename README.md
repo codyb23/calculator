@@ -1,21 +1,10 @@
-# SDG Assignment : 07 - 05 - Calculating Hooks
+# SDG Assignment : Calculating Hooks
 
-## Objectives
-
-- Practice using *functional components with hooks*
-- Practice implementing a UI wire-frame
-
-## Requirements
-
-Create a simple calculator that allows the user to add, multiply, subtract, and divide two numbers. Here is a sample UI:
+A simple calculator that allows the user to add, multiply, subtract, and divide two numbers.
 
 ![Calculator](https://raw.githubusercontent.com/suncoast-devs/handbook/master/assignments/assets/calculator.png)
 
-## Notes
-
-- Take this in small steps just like we did in class. Start with the HTML, then CSS, then with basic functionality.
-
-### Explorer Mode
+### Requirements:
 
 - [x] Implement something similar to the example UI using HTML and CSS inside a React app
 - [x] As a user, I should be able to add two numbers
