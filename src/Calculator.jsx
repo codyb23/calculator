@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 
 export function Calculator() {
-  const initialValue = 0
-  const [display, setDisplay] = useState(initialValue)
-  const [leftOperand, setLeftOperand] = useState(parseFloat(initialValue))
-  const [rightOperand, setRightOperand] = useState(parseFloat(initialValue))
+  const [display, setDisplay] = useState(0)
+  const [leftOperand, setLeftOperand] = useState()
+  const [rightOperand, setRightOperand] = useState()
   const [operator, setOperator] = useState('')
 
   console.log(leftOperand)
@@ -12,7 +11,7 @@ export function Calculator() {
   console.log(rightOperand)
 
   const setNumberFromButton = (event) => {
-    if (leftOperand === parseFloat(initialValue)) {
+    if (leftOperand === undefined) {
       setLeftOperand(event)
       setDisplay(event)
     } else {
@@ -24,7 +23,6 @@ export function Calculator() {
   const setAfterOperation = () => {
     setLeftOperand('')
     setOperator('')
-    setRightOperand('')
   }
 
   const setOperationType = (type) => {
@@ -36,9 +34,9 @@ export function Calculator() {
   }
 
   const clearAll = () => {
-    setLeftOperand(0)
+    setLeftOperand()
     setOperator('')
-    setRightOperand(0)
+    setRightOperand()
     setDisplay(0)
   }
 
@@ -49,7 +47,7 @@ export function Calculator() {
     if (leftOperand === '') {
       setLeftOperand('0')
     }
-    if (rightOperand === undefined) {
+    if (rightOperand === '') {
       setRightOperand('0')
     }
     switch (operation) {
