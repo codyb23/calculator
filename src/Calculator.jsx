@@ -72,6 +72,7 @@ export function Calculator() {
         break
     }
     setDisplay(answer)
+    setRightOperand(answer)
   }
   return (
     <div className="calculator">
