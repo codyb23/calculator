@@ -44,13 +44,6 @@ export function Calculator() {
     console.log(leftOperand)
     console.log(rightOperand)
 
-    if (leftOperand === undefined) {
-      setLeftOperand('0')
-    }
-    if (rightOperand === undefined) {
-      setRightOperand('0')
-    }
-
     let answer
 
     switch (operation) {
@@ -72,7 +65,7 @@ export function Calculator() {
         break
     }
     setDisplay(answer)
-    setRightOperand(answer)
+    setRightOperand()
   }
   return (
     <div className="calculator">
